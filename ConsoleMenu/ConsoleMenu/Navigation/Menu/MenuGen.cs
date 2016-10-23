@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace ConsoleMenu
 {
 	public class MenuGen : Menu
 	{
-		public MenuGen(string menuID, string title) : base(menuID, title)
+		public MenuGen(string title) : base(title)
 		{
 		}
 		public void AddLink(Menu gotomenu)

@@ -3,6 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMenu", "ConsoleMenu\ConsoleMenu.csproj", "{3BCD0C85-2FE0-4832-8B56-57C94F9AFA9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C1DB91BF-0045-4455-964B-49D846C548DF}"
+	ProjectSection(SolutionItems) = preProject
+		ElementOfMenu.cs = ElementOfMenu.cs
+		Link.cs = Link.cs
+		Menu.cs = Menu.cs
+		MenuGen.cs = MenuGen.cs
+		Program.cs = Program.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

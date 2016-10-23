@@ -8,23 +8,17 @@ namespace ConsoleMenu
 	{
 		private static List<Menu> allofmenu = new List<Menu>();
 		private string title;
-		private string menuID;
 		private int maxY;
 		protected List<ElementOfMenu> element = new List<ElementOfMenu>();
 
-		public Menu(string menuID, string title)
+		public Menu(string title)
 		{
 			this.title = title;
-			this.menuID = menuID;
 			allofmenu.Add(this);
 		}
 		public string Title
 		{
 			get { return title; }
-		}
-		public string MenuID
-		{
-			get { return menuID; }
 		}
 
 		public void Display()
@@ -32,7 +26,7 @@ namespace ConsoleMenu
 			int positiony = 0;
 			bool selection = false;
 			Console.CursorVisible = false;
-			if (this.Title != allofmenu[0].Title)
+			if ((this.Title != allofmenu[0].Title) && (element[element.Count-1].Name != allofmenu[0].Title))
 			{ 
 				element.Add(new ElementOfMenu(allofmenu[0].Title));
 			}

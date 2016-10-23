@@ -34,6 +34,40 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\Class\Activity.cs" />
+    <Compile Include="Data\Class\Bulletin.cs" />
+    <Compile Include="Data\Class\Evaluation.cs" />
+    <Compile Include="Data\Class\Generator.cs" />
+    <Compile Include="Navigation\Menu\Menu.cs" />
+    <Compile Include="Navigation\Menu\MenuAuto.cs" />
+    <Compile Include="Navigation\Menu\MenuAutoActivities.cs" />
+    <Compile Include="Navigation\Menu\MenuGen.cs" />
+    <Compile Include="Navigation\ElementOfMenu\AddNew.cs" />
+    <Compile Include="Navigation\ElementOfMenu\ElementOfListing.cs" />
+    <Compile Include="Navigation\ElementOfMenu\ElementOfMenu.cs" />
+    <Compile Include="Navigation\ElementOfMenu\Link.cs" />
+    <Compile Include="Data\Class\Person\Person.cs" />
+    <Compile Include="Data\Class\Person\Student.cs" />
+    <Compile Include="Data\Class\Person\Teacher.cs" />
+    <Compile Include="Navigation\ElementOfMenu\AddNewActivity.cs" />
+    <Compile Include="Data\Class\InterfaceData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Navigation\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Class\" />
+    <Folder Include="Data\Files\" />
+    <Folder Include="Data\Files\Evaluations\" />
+    <Folder Include="Navigation\Menu\" />
+    <Folder Include="Navigation\ElementOfMenu\" />
+    <Folder Include="Data\Class\Person\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Files\Activities.txt" />
+    <None Include="Data\Files\Generator.txt" />
+    <None Include="Data\Files\Students.txt" />
+    <None Include="Data\Files\Teachers.txt" />
+    <None Include="Data\Files\Evaluations\2_01.examen_noel.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

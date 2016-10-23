@@ -1,0 +1,5 @@
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/bin/Debug/ConsoleMenu.exe.mdb
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/bin/Debug/ConsoleMenu.exe
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/obj/x86/Debug/ConsoleMenu.exe
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/obj/x86/Debug/ConsoleMenu.exe.mdb
