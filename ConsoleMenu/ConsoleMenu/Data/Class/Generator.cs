@@ -59,8 +59,8 @@ namespace ConsoleMenu
 
         //functions
         public static void GenStudents()
-        {   
-            string[] file = System.IO.File.ReadAllLines(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Students.txt");
+        {
+            string[] file = System.IO.File.ReadAllLines(@"C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\Data\Files\Students.txt");
 			foreach (string line in file)
 			{
 				string[] parameters = line.Split(':');
@@ -75,7 +75,7 @@ namespace ConsoleMenu
 
         public static void GenTeachers()
         {
-            string[] file = System.IO.File.ReadAllLines(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Teachers.txt");
+            string[] file = System.IO.File.ReadAllLines(@"C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\Data\Files\Teachers.txt");
 
             foreach (string line in file)
             {
@@ -87,7 +87,7 @@ namespace ConsoleMenu
 
         public static void GenActivities()
         {
-            string[] file = System.IO.File.ReadAllLines(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Activities.txt");
+            string[] file = System.IO.File.ReadAllLines(@"C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\Data\Files\Activities.txt");
 
             foreach (string line in file)
             {
@@ -104,8 +104,7 @@ namespace ConsoleMenu
                         break;
                     }
                 }
-   
-                list_of_activities.Add(new Activity(parameters[0], tea, Int32.Parse(parameters[2]), parameters[3]));
+                list_of_activities.Add(new Activity(parameters[0], tea, Int32.Parse(parameters[2])));
             }
 
         }

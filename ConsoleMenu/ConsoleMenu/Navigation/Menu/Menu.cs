@@ -33,7 +33,7 @@ namespace ConsoleMenu
 			while (!selection)
 			{
 				Console.SetCursorPosition(0, 0);
-				Console.WriteLine(" --- " + title + " --- ");
+				Console.WriteLine(" --------- " + title + " ---------- ");
 				for (int i = 0; i < element.Count; i++)
 				{
 					if (i == positiony)
@@ -42,14 +42,14 @@ namespace ConsoleMenu
 						Console.ForegroundColor = ConsoleColor.White;
 					}
 					Console.Write(element[i].Name);
-					for (int j = 0; j < ((Console.WindowWidth - 1) - element[i].Name.Length); j++)
+					for (int j = 0; j < ((Console.WindowWidth-2) - element[i].Name.Length); j++)
 					{
 						Console.Write(" ");
 					}
 					Console.WriteLine(" ");
 					Console.ResetColor();
 				}
-				maxY = Console.CursorTop - element.Count - 2;
+				maxY = Console.CursorTop-2;
 				var k = Console.ReadKey();
 				if ((k.Key == ConsoleKey.DownArrow) && (positiony < maxY))
 				{

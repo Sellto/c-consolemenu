@@ -1,0 +1,5 @@
+C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.exe
+C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.exe
+C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.pdb
+C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.csprojResolveAssemblyReference.cache
+C:\Users\14161\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.pdb
