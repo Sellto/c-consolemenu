@@ -1,6 +1,6 @@
 Informatique 3BA:cbf:4:3_01
-Mathematiques 2BA:hlw:6:2_02
+Mathematiques 2BA:hlw:6:2_01
 Pont vers le superieur - math:hlw:2:1_05
-Pont vers le superieur - math:MAR:2:1_05
-Pont vers le superieur - math:FLE:2:1_05
 Meca:MAR:40
+POO:CBF:40
+Electronique:GNG:50

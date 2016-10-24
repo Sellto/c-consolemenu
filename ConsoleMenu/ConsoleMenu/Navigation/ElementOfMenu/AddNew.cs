@@ -23,10 +23,9 @@ namespace ConsoleMenu
 				string lastname = Console.ReadLine();
 				Console.Write("Prénom : ");
 				string firstname = Console.ReadLine();
-				Console.Write("Matricule : ");
-				string studentid = Console.ReadLine();
-				listing.Add(new Student(firstname, lastname, menu.Title, studentid));
-				File.AppendAllText(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Students.txt", Environment.NewLine+lastname+":"+firstname+":"+menu.Title+":"+studentid);
+				listing.Add(new Student(firstname, lastname, menu.Title));
+                Generator.List_of_students[menu.Title] = listing;
+				File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Students.txt"), Environment.NewLine+lastname+":"+firstname+":"+menu.Title+":"+Generator.Current_id.ToString());
 			}
 			if (listing[0].GetType() == typeof(Teacher))
 			{
@@ -39,7 +38,8 @@ namespace ConsoleMenu
 				Console.Write("Salaire : ");
 				int salary = Int32.Parse(Console.ReadLine());
 				listing.Add(new Teacher(firstname,lastname,teacherid,salary));
-				File.AppendAllText(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Teachers.txt", Environment.NewLine + lastname + ":" + firstname + ":" + teacherid+ ":" + salary);
+                Generator.List_of_teachers = listing;
+				File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Teachers.txt"), Environment.NewLine + lastname + ":" + firstname + ":" + teacherid+ ":" + salary);
 			}
 			if (listing[0].GetType() == typeof(Activity))
 			{
@@ -57,10 +57,20 @@ namespace ConsoleMenu
 						break;
 					}
 				}
-				Console.Write("ECTS : ");
-				int ects= Int32.Parse(Console.ReadLine());
-				listing.Add(new Activity(name,tea,ects));
-				File.AppendAllText(@"/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/Data/Files/Activities.txt", Environment.NewLine + name + ":" + teacherid + ":" + ects+"0");
+                if (tea == null)
+                {
+                    Console.WriteLine("Ce Trigramme n'est associé à aucun professeur \n");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.Write("ECTS : ");
+                    int ects = Int32.Parse(Console.ReadLine());
+                    listing.Add(new Activity(name, tea, ects));
+                    Generator.List_of_activities = listing;
+                    File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Activities.txt"), Environment.NewLine + name + ":" + teacherid + ":" + ects + "0");
+                }
+				
 			}
 			menu.LoadListing();
 			menu.Display();

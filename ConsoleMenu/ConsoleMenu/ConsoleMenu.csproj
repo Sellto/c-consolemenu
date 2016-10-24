@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -40,7 +40,6 @@
     <Compile Include="Data\Class\Generator.cs" />
     <Compile Include="Navigation\Menu\Menu.cs" />
     <Compile Include="Navigation\Menu\MenuAuto.cs" />
-    <Compile Include="Navigation\Menu\MenuAutoActivities.cs" />
     <Compile Include="Navigation\Menu\MenuGen.cs" />
     <Compile Include="Navigation\ElementOfMenu\AddNew.cs" />
     <Compile Include="Navigation\ElementOfMenu\ElementOfListing.cs" />
@@ -49,19 +48,9 @@
     <Compile Include="Data\Class\Person\Person.cs" />
     <Compile Include="Data\Class\Person\Student.cs" />
     <Compile Include="Data\Class\Person\Teacher.cs" />
-    <Compile Include="Navigation\ElementOfMenu\AddNewActivity.cs" />
     <Compile Include="Data\Class\InterfaceData.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Navigation\" />
-    <Folder Include="Data\" />
-    <Folder Include="Data\Class\" />
-    <Folder Include="Data\Files\" />
-    <Folder Include="Data\Files\Evaluations\" />
-    <Folder Include="Navigation\Menu\" />
-    <Folder Include="Navigation\ElementOfMenu\" />
-    <Folder Include="Data\Class\Person\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Data\Files\Activities.txt" />
     <None Include="Data\Files\Generator.txt" />

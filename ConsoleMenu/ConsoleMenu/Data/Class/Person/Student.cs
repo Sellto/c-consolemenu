@@ -17,10 +17,10 @@ namespace ConsoleMenu
         {
             //bulletin = new Bulletin();
             this.year = year;
-            this.id = (id == "0") ? GenID() : id;
+            this.id = (id == "0") ? Generator.GenID() : id;
         }
 
-        //properties
+        //Properties
         public string Id
         {
             get { return id; }
@@ -32,16 +32,7 @@ namespace ConsoleMenu
         }
 
 
-        //functions
-        public string GenID()
-        {
-            return "TEST";
-        }
-
-
-        /*public bool CheckYear(string y){
-         * bool valid = true;
-         * return valid*/
+        //Functions
 
         public List<Activity> GenListofActivities()
         {

@@ -9,13 +9,20 @@ namespace ConsoleMenu
     public class Evaluation
     {
         private Activity activity;
+		private Student student;
+        private string title;
         private int note = -1;
         private string appreciation = "";
         private Dictionary<string, int> conversionAN = new Dictionary<string, int>();
 
         public Evaluation(Activity act)
         {
-            activity = act;
+            this.activity = activity;
+            this.student = student;
+            this.title = title;
+            this.note = note;
+            this.appreciation = appreciation;
+            conversionAN.Add("", 0);
             conversionAN.Add("N", 4);
             conversionAN.Add("C", 8);
             conversionAN.Add("B", 12);
@@ -39,6 +46,16 @@ namespace ConsoleMenu
         {
             get { return activity; }
         }
+		
+		public Student Student
+        {
+            get { return student; }
+        }
+
+        public string Title
+        {
+            get { return title; }
+        }
 
 
         //Functions
@@ -50,6 +67,12 @@ namespace ConsoleMenu
         public void SetAppreciation(string app)
         {
             appreciation = app;
+        }
+		
+		public int GetNumNote()
+        {
+            int num_note = (this.note == -1) ? conversionAN[appreciation] : this.note;
+            return num_note;
         }
     }
 }
