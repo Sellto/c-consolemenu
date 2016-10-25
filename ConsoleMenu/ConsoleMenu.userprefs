@@ -1,17 +1,13 @@
 ﻿<Properties StartupConfiguration="{3BCD0C85-2FE0-4832-8B56-57C94F9AFA9A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConsoleMenu/Data/Files/Activities.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Data/Files/Evaluations/2_01.examen_noel.txt">
     <Files>
-      <File FileName="ConsoleMenu/Program.cs" Line="8" Column="22" />
-      <File FileName="ConsoleMenu/Navigation/Menu/MenuAuto.cs" Line="22" Column="27" />
-      <File FileName="ConsoleMenu/Navigation/ElementOfMenu/ElementOfListing.cs" Line="7" Column="3" />
-      <File FileName="ConsoleMenu/Data/Class/Person/Person.cs" Line="6" Column="1" />
-      <File FileName="ConsoleMenu/Data/Class/Activity.cs" Line="11" Column="3" />
-      <File FileName="ConsoleMenu/Navigation/ElementOfMenu/AddNew.cs" Line="49" Column="32" />
-      <File FileName="ConsoleMenu/Data/Class/Person/Student.cs" Line="10" Column="3" />
-      <File FileName="ConsoleMenu/Data/Class/Person/Teacher.cs" Line="3" Column="19" />
-      <File FileName="ConsoleMenu/Data/Class/Generator.cs" Line="31" Column="4" />
-      <File FileName="ConsoleMenu/Data/Class/InterfaceData.cs" Line="9" Column="2" />
-      <File FileName="ConsoleMenu/Data/Files/Activities.txt" Line="5" Column="41" />
+      <File FileName="../../Navigation/Menu/Menu.cs" Line="74" Column="38" />
+      <File FileName="../../Data/Class/Person/Student.cs" Line="59" Column="34" />
+      <File FileName="../../Data/Class/Person/Teacher.cs" Line="1" Column="1" />
+      <File FileName="../../Data/Class/Bulletin.cs" Line="27" Column="3" />
+      <File FileName="../../Navigation/ElementOfMenu/ElementOfListing.cs" Line="18" Column="16" />
+      <File FileName="../../Program.cs" Line="28" Column="4" />
+      <File FileName="../../Data/Files/Evaluations/2_01.examen_noel.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

@@ -20,4 +20,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		BaseDirectory = ConsoleMenu/bin/Debug
+	EndGlobalSection
 EndGlobal

@@ -13,7 +13,7 @@ namespace ConsoleMenu
 			}
 		public void AddAction(string name)
 			{
-				element.Add(new ElementOfMenu(name));
+			element.Add(new ElementOfMenu(name));
 			}
 
 	}

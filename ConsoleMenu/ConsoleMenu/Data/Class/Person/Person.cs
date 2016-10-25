@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleMenu
 {
+    
+    ///<summary>
+    /// The function of this class is to regroup all of people.
+    ///</summary>
 	public class Person : DataToMenu
     {
+        ///<summary>
+        /// the variable lastname and firstname have an explicit name of their function
+        ///</summary>
         public string lastname, firstname;
         
         public Person(string last, string first)

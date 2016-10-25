@@ -13,7 +13,6 @@ namespace ConsoleMenu
         private static List<DataToMenu> list_of_students = new List<DataToMenu>();
         private static List<DataToMenu> list_of_teachers = new List<DataToMenu>();
 		private static List<DataToMenu> list_of_activities = new List<DataToMenu>();
-        private static List<string> list_of_titles_evaluations = new List<string>();
         private static List<Evaluation> list_of_evaluations = new List<Evaluation>();
 
 
@@ -35,6 +34,7 @@ namespace ConsoleMenu
             GenStudents_by_year();
             GenTeachers();
             GenActivities();
+            GenEvaluation();
             
         }
 
@@ -64,6 +64,11 @@ namespace ConsoleMenu
             set { list_of_activities = value; }
         }
 
+        public static List<Evaluation> List_of_evaluations
+        {
+            get { return list_of_evaluations; }
+        }
+
         public static int Current_id
 
         {
@@ -73,11 +78,11 @@ namespace ConsoleMenu
 
 
 
-        //functions
+        //Functions
         public static void GenStudents()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Students.txt"));
-
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Students.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Students.txt"));
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
@@ -86,11 +91,10 @@ namespace ConsoleMenu
         }
 
 
-
-
         public static void GenStudents_by_year()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Year.txt"));
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Year.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Year.txt"));
 	        string[] parameters = file[0].Split(':');
             foreach (string year in parameters)
             {
@@ -103,11 +107,10 @@ namespace ConsoleMenu
         }
 
 
-
         public static void GenTeachers()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Teachers.txt"));
-
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Teachers.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Teachers.txt"));
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
@@ -118,8 +121,8 @@ namespace ConsoleMenu
 
         public static void GenActivities()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Activities.txt"));
-
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Activities.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Activities.txt"));
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
@@ -135,7 +138,7 @@ namespace ConsoleMenu
                         break;
                     }
                 }
-                list_of_activities.Add(new Activity(parameters[0], tea, Int32.Parse(parameters[2])));
+                list_of_activities.Add(new Activity(parameters[0], tea, Int32.Parse(parameters[2]), parameters[3]));
             }
 
         }
@@ -143,42 +146,58 @@ namespace ConsoleMenu
 
         public static void GenEvaluation()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Evaluations\\TITLES.txt"));
-
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Evaluations\\TITLES.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Evaluations/TITLES.txt"));
             foreach(string title in file)
             {
                 string[] param_title = title.Split('.');
-                string[] eval = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, string.Format("..\\..\\Data\\Files\\Evaluations\\{0}.txt", title)));
 
-
-                Activity current_activity;
-
+                //string[] eval = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, string.Format("..\\..\\Data\\Files\\Evaluations\\{0}.txt", title)));
+				string[] eval = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, string.Format("../../Data/Files/Evaluations/{0}.txt", title)));
                 foreach(string evaluation in eval)
                 {
                     string[] param_eval = evaluation.Split(':');
-                    //list_of_evaluations.Add(new Evaluation("", ));
+                    list_of_evaluations.Add(new Evaluation(SearchActivity(param_title[0]), SearchStudent(param_eval[0]), param_title[1], Int32.Parse(param_eval[1]) ));
                 }
             }
         }
 
 
-        //public static Student SearchStudent(string id)
-        //{
-            //foreach(Student student in )
-        //}
+        public static Student SearchStudent(string id)
+        {
+            foreach(Student student in list_of_students)
+            {   
+                if (student.Id == id)
+                {
+                    return student;
+                }
+            }
+            return null;
+        }
 
 
-
-
+        public static Activity SearchActivity(string code)
+        {
+            foreach (Activity activity in list_of_activities)
+            {
+                if (activity.Code == code)
+                {
+                    return activity;
+                }
+            }
+            return null;
+        }
 
 
         public int GenCurrentID()
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt"));
+            //string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt"));
+			string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Generator.txt"));
             string[] parameters = file[0].Split(':');
             return Int32.Parse(parameters[1]);
         }
 		
+
 		 public static string GenID()
         {
 
@@ -187,9 +206,11 @@ namespace ConsoleMenu
             return current_id.ToString();
         }
 
+
         public static void ModificationOfGeneratorFileByID(string id)
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt");
+			var path = Path.Combine(Environment.CurrentDirectory, "../../Data/Files/Generator.txt");
+            //var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt");
             string[] file = System.IO.File.ReadAllLines(path);
             File.WriteAllText(path, String.Empty);
             foreach (string line in file)

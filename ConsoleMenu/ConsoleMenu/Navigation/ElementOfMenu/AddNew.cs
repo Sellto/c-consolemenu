@@ -66,7 +66,7 @@ namespace ConsoleMenu
                 {
                     Console.Write("ECTS : ");
                     int ects = Int32.Parse(Console.ReadLine());
-                    listing.Add(new Activity(name, tea, ects));
+                    listing.Add(new Activity(name, tea, ects, "2_08"));
                     Generator.List_of_activities = listing;
                     File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Activities.txt"), Environment.NewLine + name + ":" + teacherid + ":" + ects + "0");
                 }

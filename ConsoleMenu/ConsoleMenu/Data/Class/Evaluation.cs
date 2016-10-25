@@ -15,13 +15,13 @@ namespace ConsoleMenu
         private string appreciation = "";
         private Dictionary<string, int> conversionAN = new Dictionary<string, int>();
 
-        public Evaluation(Activity act)
+        public Evaluation(Activity activity, Student student, string title, int note)
         {
             this.activity = activity;
             this.student = student;
             this.title = title;
             this.note = note;
-            this.appreciation = appreciation;
+            //this.appreciation = appreciation;
             conversionAN.Add("", 0);
             conversionAN.Add("N", 4);
             conversionAN.Add("C", 8);
@@ -73,6 +73,11 @@ namespace ConsoleMenu
         {
             int num_note = (this.note == -1) ? conversionAN[appreciation] : this.note;
             return num_note;
+        }
+
+        public void DisplayEvaluation()
+        {
+            Console.WriteLine("\n" + activity.Name + "\n\n\t" + title + ":\t" + student.Id + "\t" + GetNumNote() );
         }
     }
 }

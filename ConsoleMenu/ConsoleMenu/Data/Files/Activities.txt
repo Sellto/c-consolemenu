@@ -1,7 +1,3 @@
 Informatique 3BA:cbf:4:3_01
-Mathematiques 2BA:hlw:6:2_01
+Mathematiques 2BA:hlw:6:3_02
 Pont vers le superieur - math:hlw:2:1_05
-Meca:MAR:40
-POO:CBF:40
-Electronique:GNG:50
-3B1010:CBF:50

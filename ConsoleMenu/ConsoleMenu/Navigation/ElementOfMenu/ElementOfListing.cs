@@ -16,7 +16,17 @@ namespace ConsoleMenu
 		public override void Action()
 		{
 			item.Show();
-			Console.ReadLine();
+			Console.ReadKey();
+			//Erase
+			Console.SetCursorPosition(0, 0);
+			for (int i = 0; i < Console.WindowHeight; i++)
+			{
+				for (int j = 0; j < Console.WindowWidth; j++)
+				{
+					Console.Write(" ");
+				}
+			}
+			Console.SetCursorPosition(0, 0);
 			menu.Display();
 		}
 	}

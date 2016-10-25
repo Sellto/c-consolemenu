@@ -12,14 +12,15 @@ namespace ConsoleMenu
         private string name, code;
         private Teacher teacher;
         private int ects;
-        private static string CODE;
+        //private static string CODE;
 
-        public Activity(string name, Teacher teacher, int ects, string code="0")
+        public Activity(string name, Teacher teacher, int ects, string code)
         {
             this.name = name;
             this.teacher = teacher;
             this.ects = ects;
-            this.code = (code == "0") ? GenCode() : code;
+            //this.code = (code == "0") ? GenCode() : code;
+            this.code = code;
 
         }
 

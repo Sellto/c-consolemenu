@@ -12,12 +12,13 @@ namespace ConsoleMenu
         private Bulletin bulletin;
 
 
+
         public Student(string first, string last, string year, string id="0") :
             base(first, last)
-        {
-            //bulletin = new Bulletin();
+        {           
             this.year = year;
             this.id = (id == "0") ? Generator.GenID() : id;
+            bulletin = new Bulletin(this.id, year);
         }
 
         //Properties
@@ -34,16 +35,15 @@ namespace ConsoleMenu
 
         //Functions
 
-        public List<Activity> GenListofActivities()
+        public List<Activity> SearchActivities()
         {
             List<Activity>  Listofact = new List<Activity>();
             foreach (Activity activity in Generator.List_of_activities)
             {
-                if (activity.Code.Split('-')[0] == year)
+                if (activity.Code.Split('_')[0] == year)
                 {
                     Listofact.Add(activity);
                 }
-				return Listofact;
             }
 
             return Listofact;
@@ -52,12 +52,7 @@ namespace ConsoleMenu
 
 
 		//Needed For Navigation!
-		public override void Show()
-		{
-			base.Show();
-			Console.WriteLine("Under Construct");
 
-		}
 
         public override string DisplayInfo()
         {
@@ -65,5 +60,16 @@ namespace ConsoleMenu
 
         }
 
+		public override void Show()
+		{
+			base.Show();
+			foreach (string act_title in bulletin.SearchActivities())
+			{
+				Console.WriteLine("\t" + act_title);
+			}
+			Console.WriteLine();
+			bulletin.DisplayBulletin();
+			//Console.WriteLine("Under Construct");
+		}
     }
 }
