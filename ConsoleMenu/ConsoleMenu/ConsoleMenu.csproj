@@ -50,7 +50,9 @@
     <Compile Include="Data\Class\Person\Teacher.cs" />
     <Compile Include="Data\Class\InterfaceData.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Files\Year.txt" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Data\Files\Activities.txt" />
     <None Include="Data\Files\Generator.txt" />

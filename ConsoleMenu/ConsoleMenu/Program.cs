@@ -15,9 +15,9 @@ namespace ConsoleMenu
 			Generator.GetInstance();
 			MenuGen main = new MenuGen("Menu Principale");
 			MenuGen student_listing = new MenuGen("Liste des Etudiants");
-			foreach (var item in Generator.List_of_students)
+			foreach (var item in Generator.List_of_students_by_year)
 			{
-				student_listing.AddLink(new MenuAuto(item.Key, Generator.List_of_students[item.Key]));
+				student_listing.AddLink(new MenuAuto(item.Key, Generator.List_of_students_by_year[item.Key]));
 			}
 			main.AddLink(student_listing);
 			MenuAuto teacher_listing = new MenuAuto("Liste des Professeurs",Generator.List_of_teachers);

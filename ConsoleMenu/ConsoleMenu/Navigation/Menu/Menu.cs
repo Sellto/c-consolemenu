@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace ConsoleMenu
 {
@@ -41,8 +42,8 @@ namespace ConsoleMenu
 						Console.BackgroundColor = ConsoleColor.Black;
 						Console.ForegroundColor = ConsoleColor.White;
 					}
-					Console.Write(element[i].Name);
-					for (int j = 0; j < ((Console.WindowWidth-2) - element[i].Name.Length); j++)
+					Console.Write("- " + element[i].Name);
+					for (int j = 0; j < ((Console.WindowWidth-4) - element[i].Name.Length); j++)
 					{
 						Console.Write(" ");
 					}

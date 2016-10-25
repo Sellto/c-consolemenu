@@ -15,11 +15,12 @@ namespace ConsoleMenu
 		public void LoadListing()
 		{
 			element.Clear();
-			foreach (DataToMenu item in listing)
+            element.Add(new AddNew(listing, this));
+            foreach (DataToMenu item in listing)
 			{
 				element.Add(new ElementofListing(item.DisplayInfo(),item,this));
 			}
-			element.Add(new AddNew(listing, this));
+			
 		}
 	}
 }

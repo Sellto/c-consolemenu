@@ -9,8 +9,9 @@ namespace ConsoleMenu
 {
     public class Generator
     {
-		private static Dictionary<string, List<DataToMenu>> list_of_students = new Dictionary<string, List<DataToMenu>>();
-		private static List<DataToMenu> list_of_teachers = new List<DataToMenu>();
+		private static Dictionary<string, List<DataToMenu>> list_of_students_by_year = new Dictionary<string, List<DataToMenu>>();
+        private static List<DataToMenu> list_of_students = new List<DataToMenu>();
+        private static List<DataToMenu> list_of_teachers = new List<DataToMenu>();
 		private static List<DataToMenu> list_of_activities = new List<DataToMenu>();
         private static List<string> list_of_titles_evaluations = new List<string>();
         private static List<Evaluation> list_of_evaluations = new List<Evaluation>();
@@ -31,19 +32,27 @@ namespace ConsoleMenu
 
             current_id = GenCurrentID();
             GenStudents();
+            GenStudents_by_year();
             GenTeachers();
             GenActivities();
             
         }
 
         //Properties
-		public static Dictionary<string,List<DataToMenu>> List_of_students
+		public static Dictionary<string,List<DataToMenu>> List_of_students_by_year
+        {
+            get { return list_of_students_by_year;}
+            set { list_of_students_by_year = value;}
+        }
+
+        public static List<DataToMenu> List_of_students
         {
             get { return list_of_students; }
             set { list_of_students = value; }
         }
 
-		public static List<DataToMenu> List_of_teachers
+
+        public static List<DataToMenu> List_of_teachers
         {
             get { return list_of_teachers; }
             set { list_of_teachers = value; }
@@ -68,15 +77,29 @@ namespace ConsoleMenu
         public static void GenStudents()
         {
             string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Students.txt"));
-			foreach (string line in file)
-			{
-				string[] parameters = line.Split(':');
-				if (!list_of_students.ContainsKey(parameters[2]))
-				{
-					list_of_students.Add(parameters[2], new List<DataToMenu>());
-				}
-				list_of_students[parameters[2]].Add(new Student(parameters[0], parameters[1], parameters[2], parameters[3]));
-			}
+
+            foreach (string line in file)
+            {
+                string[] parameters = line.Split(':');
+                list_of_students.Add(new Student(parameters[0], parameters[1], parameters[2], parameters[3]));
+            }
+        }
+
+
+
+
+        public static void GenStudents_by_year()
+        {
+            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Year.txt"));
+	        string[] parameters = file[0].Split(':');
+            foreach (string year in parameters)
+            {
+                list_of_students_by_year.Add(year, new List<DataToMenu>());
+            }
+            foreach (Student student in List_of_students)
+            {
+                list_of_students_by_year[student.Year].Add(student);
+            }
         }
 
 
@@ -166,18 +189,20 @@ namespace ConsoleMenu
 
         public static void ModificationOfGeneratorFileByID(string id)
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt"));
+            var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt");
+            string[] file = System.IO.File.ReadAllLines(path);
+            File.WriteAllText(path, String.Empty);
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
                 if (parameters[0] == id)
                 {
 
-                    File.WriteAllLines(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt"), parameters[0] + ":" + current_id);
+                    File.AppendAllText(path, parameters[0] + ":" + current_id);
                 }
                 else
                 {
-                    File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Generator.txt"), line);
+                    File.AppendAllText(path, line);
                 }
             }
         }

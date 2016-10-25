@@ -10,7 +10,7 @@ namespace ConsoleMenu
 	{
 		private MenuAuto menu;
 		private List<DataToMenu> listing;
-		public AddNew(List<DataToMenu> listing, MenuAuto menu) : base("Ajouter")
+		public AddNew(List<DataToMenu> listing, MenuAuto menu) : base("- Ajouter - -")
 		{
 			this.listing = listing;
 			this.menu = menu;
@@ -24,7 +24,7 @@ namespace ConsoleMenu
 				Console.Write("Prénom : ");
 				string firstname = Console.ReadLine();
 				listing.Add(new Student(firstname, lastname, menu.Title));
-                Generator.List_of_students[menu.Title] = listing;
+                Generator.List_of_students_by_year[menu.Title] = listing;
 				File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "..\\..\\Data\\Files\\Students.txt"), Environment.NewLine+lastname+":"+firstname+":"+menu.Title+":"+Generator.Current_id.ToString());
 			}
 			if (listing[0].GetType() == typeof(Teacher))
