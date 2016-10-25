@@ -13,7 +13,7 @@ namespace ConsoleMenu
 		{
 
 			Generator.GetInstance();
-			MenuGen main = new MenuGen("Menu Principale");
+			MenuGen main = new MenuGen("Menu Principal");
 			MenuGen student_listing = new MenuGen("Liste des Etudiants");
 			foreach (var item in Generator.List_of_students_by_year)
 			{
