@@ -56,21 +56,14 @@ namespace ConsoleMenu
 		//Needed For Navigation!
 		public override void Show()
 		{
-			base.Show();
-			foreach (Activity activity in Generator.List_of_activities)
-			{
-				try
-				{
-					if (activity.Teacher.Trigram.ToUpper() == trigram.ToUpper())
-					{
-						Console.WriteLine(string.Format("Cours: {0}\tCode: {1}\tCrédits: {2}",
-							activity.Name, activity.Code, activity.Ects));
-					}
-				}
-				catch
-				{ 
-				}
-			}
+            try
+            {
+                Generator.List_Of_Activities_By_Teacher[this.Trigram].Display();
+            }
+            catch
+            {
+                Console.WriteLine(this.Lastname + " " + this.Firstname + " n'est inscrit(e) a aucun cours");
+            }
 		}
 
 

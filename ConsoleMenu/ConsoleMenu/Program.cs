@@ -24,7 +24,9 @@ namespace ConsoleMenu
 			main.AddLink(teacher_listing);
 			MenuAuto activities_listing = new MenuAuto("Liste des Activitées", Generator.List_of_activities);
 			main.AddLink(activities_listing);
-			main.Display();
+            Generator.GenTeacherActivityMenu();
+            main.Display();
+
 		}
 	}
 }

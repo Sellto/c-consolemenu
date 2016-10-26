@@ -18,3 +18,8 @@ C:\Users\Ben\Documents\Visual Studio 2015\Projects\c-consolemenu\ConsoleMenu\Con
 C:\Users\Ben\Documents\Visual Studio 2015\Projects\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.exe
 C:\Users\Ben\Documents\Visual Studio 2015\Projects\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.pdb
 C:\Users\Ben\Documents\Visual Studio 2015\Projects\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.csprojResolveAssemblyReference.cache
+C:\Users\selle\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.exe
+C:\Users\selle\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.pdb
+C:\Users\selle\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.exe
+C:\Users\selle\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\bin\Debug\ConsoleMenu.pdb
+C:\Users\selle\Desktop\c-consolemenu\ConsoleMenu\ConsoleMenu\obj\x86\Debug\ConsoleMenu.csprojResolveAssemblyReference.cache

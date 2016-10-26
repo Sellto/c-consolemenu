@@ -11,9 +11,9 @@ namespace ConsoleMenu
 			{
 			element.Add(new Link(gotomenu.Title, gotomenu));
 			}
-		public void AddAction(string name)
+		public void AddAction(string name,DataToMenu item)
 			{
-			element.Add(new ElementOfMenu(name));
+			element.Add(new ElementofListing(name,item,this));
 			}
 
 	}

@@ -73,7 +73,15 @@ namespace ConsoleMenu
 
 		public override void Show()
 		{
-			DisplayActivity();
+            MenuGen listing_of_evaluations = new MenuGen("Liste des évaluations de l'activité : " +this.Name  );
+            foreach (Evaluation eval in Generator.List_of_evaluations)
+            {
+                if (eval.Activity.Code == this.Code)
+                {
+                    listing_of_evaluations.AddAction(eval.Student.Id + "....." +eval.Note, eval.Activity);
+                }
+            }
+            listing_of_evaluations.Display();
 		}
     }
 }

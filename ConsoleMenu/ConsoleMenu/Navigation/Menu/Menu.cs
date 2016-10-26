@@ -27,10 +27,16 @@ namespace ConsoleMenu
 			int positiony = 0;
 			bool selection = false;
 			Console.CursorVisible = false;
-			if ((this.Title != allofmenu[0].Title) && (element[element.Count-1].Name != allofmenu[0].Title))
-			{ 
-				element.Add(new ElementOfMenu(allofmenu[0].Title));
-			}
+            try
+            {
+                if ((this.Title != allofmenu[0].Title) && (element[element.Count - 1].Name != allofmenu[0].Title))
+                {
+                    element.Add(new ElementOfMenu(allofmenu[0].Title));
+                }
+            }
+            catch
+            {
+            }
 			while (!selection)
 			{
 				Console.SetCursorPosition(0, 0);
@@ -39,8 +45,8 @@ namespace ConsoleMenu
 				{
 					if (i == positiony)
 					{
-						Console.BackgroundColor = ConsoleColor.Black;
-						Console.ForegroundColor = ConsoleColor.White;
+						Console.BackgroundColor = ConsoleColor.White;
+						Console.ForegroundColor = ConsoleColor.Black;
 					}
 					Console.Write("- " + element[i].Name);
 					for (int j = 0; j < ((Console.WindowWidth-4) - element[i].Name.Length); j++)
