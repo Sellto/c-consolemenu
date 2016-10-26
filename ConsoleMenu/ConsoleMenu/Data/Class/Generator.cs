@@ -14,7 +14,7 @@ namespace ConsoleMenu
         private static List<DataToMenu> list_of_teachers = new List<DataToMenu>();
 		private static List<DataToMenu> list_of_activities = new List<DataToMenu>();
         private static List<Evaluation> list_of_evaluations = new List<Evaluation>();
-        private static Dictionary<string, MenuGen> list_of_activities_by_teachers = new Dictionary<string, MenuGen>();
+        private static Dictionary<string, List<Activity>> list_of_activities_by_teachers = new Dictionary<string,List<Activity>>();
 
 
         private static int current_id;
@@ -37,6 +37,7 @@ namespace ConsoleMenu
             GenTeachers();
             GenActivities();
             GenEvaluation();
+            GenTeacherActivity();
         }
 
         //Properties
@@ -46,7 +47,7 @@ namespace ConsoleMenu
             set { list_of_students_by_year = value;}
         }
 
-        public static Dictionary<string, MenuGen> List_Of_Activities_By_Teacher
+        public static Dictionary<string, List<Activity>> List_Of_Activities_By_Teacher
         {
             get { return list_of_activities_by_teachers; }
         }
@@ -112,6 +113,17 @@ namespace ConsoleMenu
             }
         }
 
+        public static Student SearchStudent(string id)
+        {
+            foreach (Student student in list_of_students)
+            {
+                if (student.Id == id)
+                {
+                    return student;
+                }
+            }
+            return null;
+        }
 
         public static void GenTeachers()
         {
@@ -120,7 +132,7 @@ namespace ConsoleMenu
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
-				list_of_teachers.Add(new Teacher(parameters[0], parameters[1], parameters[2].ToUpper(), 2000));
+				list_of_teachers.Add(new Teacher(parameters[0], parameters[1], parameters[2].ToUpper(), Int32.Parse(parameters[3])));
             }
         }
 
@@ -149,6 +161,18 @@ namespace ConsoleMenu
 
         }
 
+        public static Activity SearchActivity(string code)
+        {
+            foreach (Activity activity in list_of_activities)
+            {
+                if (activity.Code == code)
+                {
+                    return activity;
+                }
+            }
+            return null;
+        }
+
 
         public static void GenEvaluation()
         {
@@ -169,30 +193,10 @@ namespace ConsoleMenu
         }
 
 
-        public static Student SearchStudent(string id)
-        {
-            foreach(Student student in list_of_students)
-            {   
-                if (student.Id == id)
-                {
-                    return student;
-                }
-            }
-            return null;
-        }
+        
 
 
-        public static Activity SearchActivity(string code)
-        {
-            foreach (Activity activity in list_of_activities)
-            {
-                if (activity.Code == code)
-                {
-                    return activity;
-                }
-            }
-            return null;
-        }
+        
 
 
         public int GenCurrentID()
@@ -213,19 +217,19 @@ namespace ConsoleMenu
         }
 
 
-        public static Dictionary<string, MenuGen> GenTeacherActivityMenu()
+        public static Dictionary<string, List<Activity>> GenTeacherActivity()
         {
             foreach (Teacher teacher in List_of_teachers)
             {
                 if (!list_of_activities_by_teachers.ContainsKey(teacher.Trigram))
                 {
-                    list_of_activities_by_teachers.Add(teacher.Trigram, new MenuGen("Listes des Activité de "+teacher.Lastname+" "+teacher.firstname));
+                    list_of_activities_by_teachers.Add(teacher.Trigram,new List<Activity>());
                 }
             }
             foreach (Activity activity in List_of_activities)
             {
-                
-                list_of_activities_by_teachers[activity.Teacher.Trigram].AddAction(activity.Name, activity);
+
+               list_of_activities_by_teachers[activity.Teacher.Trigram].Add(activity);
                 
             }
             return list_of_activities_by_teachers;

@@ -67,6 +67,7 @@ namespace ConsoleMenu
                     }
                 }
             }
+            Console.WriteLine("\nMoyenne:\t" + Average() + "/20");
         }
 
 
@@ -74,13 +75,14 @@ namespace ConsoleMenu
         private double Average()
         {
             int total = 0;
+            int total_ects = 0;
             foreach(Evaluation eval in evaluations)
-            {
-                total += eval.GetNumNote();
+            {   
+                total += (eval.GetNumNote()*eval.Activity.Ects);
+                Console.WriteLine(eval.Title + "\t" + eval.Activity.Ects + "\t" + total);
+                total_ects += eval.Activity.Ects;
             }
-
-            return (total / evaluations.Count()); 
-        }
-            
+            return (total / total_ects); 
+        }        
     }
 }

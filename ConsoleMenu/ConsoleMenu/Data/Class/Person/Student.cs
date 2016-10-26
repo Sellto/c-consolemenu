@@ -63,10 +63,6 @@ namespace ConsoleMenu
 		public override void Show()
 		{
 			base.Show();
-			foreach (string act_title in bulletin.SearchActivities())
-			{
-				Console.WriteLine("\t" + act_title);
-			}
 			Console.WriteLine();
 			bulletin.DisplayBulletin();
 			//Console.WriteLine("Under Construct");

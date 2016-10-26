@@ -48,7 +48,6 @@ namespace ConsoleMenu
 		public override void Show()
 		{
 			Console.WriteLine(" --- " + lastname + " " + firstname + " --- \n");
-			Console.WriteLine("Liste de vos cours :\n");
 		}
 
 

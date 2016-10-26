@@ -56,15 +56,17 @@ namespace ConsoleMenu
 		//Needed For Navigation!
 		public override void Show()
 		{
-            try
+            Console.WriteLine("--- Informations Générales ---");
+            Console.WriteLine("Nom        :" + this.Lastname);
+            Console.WriteLine("Prénom     :" + this.Firstname);
+            Console.WriteLine("Salaire    :" + this.salary);
+            Console.WriteLine("\t");
+            Console.WriteLine("--- Listes des Cours ---");
+            foreach (Activity activity in Generator.List_Of_Activities_By_Teacher[this.Trigram])
             {
-                Generator.List_Of_Activities_By_Teacher[this.Trigram].Display();
+                Console.WriteLine(activity.Code + " - " + activity.Name);
             }
-            catch
-            {
-                Console.WriteLine(this.Lastname + " " + this.Firstname + " n'est inscrit(e) a aucun cours");
-            }
-		}
+        }
 
 
 
