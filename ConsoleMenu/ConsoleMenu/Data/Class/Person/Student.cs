@@ -14,7 +14,7 @@ namespace ConsoleMenu
         {           
             this.year = year;
             this.id = (id == "0") ? Generator.GenID() : id;
-            bulletin = new Bulletin(this.id, year);
+            bulletin = new Bulletin(this.id, this.year);
         }
 
         //Properties

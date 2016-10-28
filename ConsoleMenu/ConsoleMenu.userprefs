@@ -1,28 +1,9 @@
 ﻿<Properties StartupConfiguration="{3BCD0C85-2FE0-4832-8B56-57C94F9AFA9A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Data/Class/Bulletin.cs">
     <Files>
       <File FileName="../../Navigation/Menu/Menu.cs" Line="77" Column="50" />
-      <File FileName="../../Navigation/Menu/MenuAuto.cs" Line="5" Column="57" />
-      <File FileName="../../Navigation/Menu/MenuGen.cs" Line="13" Column="72" />
-      <File FileName="../../Data/Files/Activities.txt" Line="1" Column="1" />
-      <File FileName="../../Data/Files/year.txt" Line="1" Column="9" />
-      <File FileName="../../Data/Files/Teachers.txt" Line="1" Column="1" />
-      <File FileName="../../Data/Files/Students.txt" Line="1" Column="1" />
-      <File FileName="../../Data/Files/Generator.txt" Line="1" Column="1" />
-      <File FileName="../../Navigation/ElementOfMenu/ElementOfMenu.cs" Line="17" Column="3" />
-      <File FileName="../../Navigation/ElementOfMenu/Link.cs" Line="19" Column="1" />
-      <File FileName="../../Navigation/ElementOfMenu/ElementOfListing.cs" Line="18" Column="16" />
-      <File FileName="../../Navigation/ElementOfMenu/AddNew.cs" Line="62" Column="36" />
-      <File FileName="Debug État" />
-      <File FileName="../../Data/Class/Person/Person.cs" Line="50" Column="70" />
-      <File FileName="../../Data/Class/InterfaceData.cs" Line="7" Column="3" />
-      <File FileName="../../Data/Class/Generator.cs" Line="10" Column="5" />
-      <File FileName="../../Data/Class/Evaluation.cs" Line="129" Column="1" />
+      <File FileName="../../Data/Class/Person/Student.cs" Line="17" Column="51" />
       <File FileName="../../Data/Class/Bulletin.cs" Line="7" Column="22" />
-      <File FileName="../../Data/Class/Activity.cs" Line="80" Column="3" />
-      <File FileName="../../Data/Class/Person/Teacher.cs" Line="49" Column="14" />
-      <File FileName="../../Data/Class/Person/Student.cs" Line="45" Column="3" />
-      <File FileName="../../Program.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

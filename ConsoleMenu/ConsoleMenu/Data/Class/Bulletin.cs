@@ -65,6 +65,7 @@ namespace ConsoleMenu
                     }
                 }
             }
+			evaluations = new List<Evaluation>();
             //Console.WriteLine("\nMoyenne:\t" + Average() + "/20");
         }
 
