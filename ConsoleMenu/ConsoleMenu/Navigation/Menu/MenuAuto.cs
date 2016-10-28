@@ -18,7 +18,11 @@ namespace ConsoleMenu
             element.Add(new AddNew(listing, this));
             foreach (DataToMenu item in listing)
 			{
-				element.Add(new ElementofListing(item.DisplayInfo(),item,this));
+                if (item.Name != "FirstItem")
+                {
+                    element.Add(new ElementofListing(item.DisplayInfo(), item, this));
+                }
+                
 			}
 			
 		}

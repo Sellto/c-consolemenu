@@ -1,3 +1,7 @@
-Informatique 3BA:cbf:4:3_01
-Mathematiques 3BA:hlw:6:3_02
-Pont vers le superieur - math:hlw:2:1_05
+﻿Informatique 2BA:CBF:4:2_1
+Informatique 3BA:LUR:4:3_1
+Electronique 2BA:GNG:4:2_2
+POO:LUR:4:3_2
+Electricité 1BA:VRT:4:1_1
+Informatique 1MA:CBF:4:4_1
+Mathématique 1MA:HLW:4:4_2

@@ -58,31 +58,42 @@ namespace ConsoleMenu
             Console.Write("Bulletin:\n");
             foreach(string act_title in SearchActivities())
             {
-                Console.WriteLine("\n\t-- " + act_title+ " --\t");
+                Console.WriteLine("\n\t-- " + act_title+ " --\tMoyenne: : " + AverageByActivity(PointsByActivity(act_title)) + "/20\n");
                 foreach(Evaluation eval in evaluations)
                 {
                     if(eval.Activity.Name == act_title)
                     {
-                        Console.WriteLine("\t\t" + eval.Title + ":\t" + eval.GetNumNote());
+                        Console.WriteLine("\t\t" + eval.Title + ":\t" + eval.GetNote());
                     }
                 }
             }
-            Console.WriteLine("\nMoyenne:\t" + Average() + "/20");
+            //Console.WriteLine("\nMoyenne:\t" + Average() + "/20");
+        }
+
+        //Comme Average est appelée uniquement dans Displaybulletin -> la liste des evalutions est déja composée
+        private double AverageByActivity(List<int> points)
+        {
+            int total = 0;
+            foreach (int point in points)
+            {
+                total += point;
+            }
+            return (total / points.Count);
         }
 
 
-        //Comme Average est appelée uniquement dans Displaybulletin -> la liste des evalutions est déja composée
-        private double Average()
+        private List<int> PointsByActivity(string act_title)
         {
-            int total = 0;
-            int total_ects = 0;
+            List<int> points = new List<int>();
+
             foreach(Evaluation eval in evaluations)
             {   
-                total += (eval.GetNumNote()*eval.Activity.Ects);
-                Console.WriteLine(eval.Title + "\t" + eval.Activity.Ects + "\t" + total);
-                total_ects += eval.Activity.Ects;
+               if(eval.Activity.Name == act_title)
+                {
+                    points.Add(eval.GetNumNote());
+                }
             }
-            return (total / total_ects); 
+            return points; 
         }        
     }
 }

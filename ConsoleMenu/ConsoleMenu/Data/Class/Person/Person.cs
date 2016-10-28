@@ -34,6 +34,21 @@ namespace ConsoleMenu
             get { return lastname; }
         }
 
+        public override string Name
+        {
+            get
+            {
+                return lastname;
+            }
+        }
+
+        public override Activity Activity
+        {
+            get; set;
+            
+        }
+
+
 
         //Functions
         public string DisplayName()

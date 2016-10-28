@@ -3,85 +3,102 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ConsoleMenu
 {
 	public class Activity : DataToMenu
-    {
+	{
 
-        private string name, code;
-        private Teacher teacher;
-        private int ects;
-        //private static string CODE;
+		private string name, code, year;
+		private Teacher teacher;
+		private int ects;
 
-        public Activity(string name, Teacher teacher, int ects, string code)
-        {
-            this.name = name;
-            this.teacher = teacher;
-            this.ects = ects;
-            //this.code = (code == "0") ? GenCode() : code;
-            this.code = code;
 
-        }
+		public Activity(string name, Teacher teacher, int ects, string year, string code)
+		{
+			this.name = name;
+			this.teacher = teacher;
+			this.ects = ects;
+			this.code = code;
+			this.year = year;
 
-        //properties
-        public string Name
-        {
-            get { return name; }
-        }
+		}
 
-        public string Code
-        {
-            get { return code; }
-        }
+		//properties
+		public override string Name
+		{
+			get { return name; }
+		}
 
-        public int Ects
-        {
-            get { return ects; }
-        }
+		public string Code
+		{
+			get { return code; }
+		}
 
-        public Teacher Teacher
-        {
-            get { return teacher; }
-        }
+		public string Year
+		{
+			get { return year; }
+		}
+
+		public int Ects
+		{
+			get { return ects; }
+		}
+
+		public Teacher Teacher
+		{
+			get { return teacher; }
+		}
+
 
 
         //functions
         public void DisplayActivity()
-        {
-            Console.WriteLine(string.Format("{0}\n\tEnseigant: {1}\n\tCode: {2}\n\tCredits: {3}", 
-                name, teacher.Lastname,code, ects));
-        }
+		{
+			Console.WriteLine(string.Format("{0}\n\tEnseigant: {1}\n\tCode: {2}\n\tCredits: {3}",
+				name, teacher.Lastname, this.code, ects));
+		}
 
-        public string GenCode()
-        {
-            return "TEST";
-        }
 
-        public List<Evaluation> GenListofEvaluations()
-        {
-            List<Evaluation> list_of_evaluations = new List<Evaluation>();
-            return list_of_evaluations;
-        }
+		public List<Evaluation> GenListofEvaluations()
+		{
+			List<Evaluation> list_of_evaluations = new List<Evaluation>();
+			return list_of_evaluations;
+		}
 
 
 		//Needed For Navigation!
 		public override string DisplayInfo()
 		{
-			return name;
+			return  this.Code + " - " + this.Name;
 		}
 
 		public override void Show()
 		{
-            MenuGen listing_of_evaluations = new MenuGen("Liste des évaluations de l'activité : " +this.Name  );
+			List<DataToMenu> Listing = new List<DataToMenu>();
+            List<string> titles = new List<string>();
+            
+            
+
             foreach (Evaluation eval in Generator.List_of_evaluations)
             {
-                if (eval.Activity.Code == this.Code)
+                if (eval.Activity == this && !titles.Contains(eval.Title))
                 {
-                    listing_of_evaluations.AddAction(eval.Student.Id + "....." +eval.Note, eval.Activity);
+                    Listing.Add(eval);
+                    titles.Add(eval.Title);
+                    //Console.WriteLine(eval.Title + " : " + eval.Student.Id + " : "  + eval.GetNote());
                 }
             }
+
+            if (Listing.Count == 0)
+            {
+                Listing.Add(new Evaluation(this, new Student("FirstItem", "FirstItem", "FirstItem"), "FirstItem"));
+            }
+
+            MenuAuto listing_of_evaluations = new MenuAuto("évaluations de l'activité : " + this.Name, Listing);
             listing_of_evaluations.Display();
-		}
-    }
+        }
+ 
+	}
 }

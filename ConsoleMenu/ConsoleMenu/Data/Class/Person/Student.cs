@@ -13,8 +13,8 @@ namespace ConsoleMenu
 
 
 
-        public Student(string first, string last, string year, string id="0") :
-            base(first, last)
+        public Student(string last, string first, string year, string id="0") :
+            base(last, first)
         {           
             this.year = year;
             this.id = (id == "0") ? Generator.GenID() : id;
@@ -65,7 +65,6 @@ namespace ConsoleMenu
 			base.Show();
 			Console.WriteLine();
 			bulletin.DisplayBulletin();
-			//Console.WriteLine("Under Construct");
 		}
     }
 }

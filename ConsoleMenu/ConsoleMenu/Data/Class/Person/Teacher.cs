@@ -11,8 +11,8 @@ namespace ConsoleMenu
         private string trigram;
         private int salary;
 
-        public Teacher(string first, string last, string tri, int sal) :
-            base(first, last)
+        public Teacher(string last, string first, string tri, int sal) :
+            base(last, first)
         {
             trigram = tri;
             salary = sal;
@@ -61,10 +61,13 @@ namespace ConsoleMenu
             Console.WriteLine("Prénom     :" + this.Firstname);
             Console.WriteLine("Salaire    :" + this.salary);
             Console.WriteLine("\t");
-            Console.WriteLine("--- Listes des Cours ---");
-            foreach (Activity activity in Generator.List_Of_Activities_By_Teacher[this.Trigram])
+            Console.WriteLine("--- Listes des Cours ---\n");
+            foreach (Activity activity in Generator.List_of_activities)
             {
-                Console.WriteLine(activity.Code + " - " + activity.Name);
+                if (activity.Teacher.Trigram == trigram)
+                {
+                    Console.WriteLine("\t" + activity.DisplayInfo());
+                }
             }
         }
 

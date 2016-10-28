@@ -12,8 +12,8 @@ namespace ConsoleMenu
 		public static void Main(string[] args)
 		{
 
-			Generator.GetInstance();
-			MenuGen main = new MenuGen("Menu Principal");
+            Generator.GetInstance();
+            MenuGen main = new MenuGen("Menu Principal");
 			MenuGen student_listing = new MenuGen("Liste des Etudiants");
 			foreach (var item in Generator.List_of_students_by_year)
 			{
@@ -22,10 +22,13 @@ namespace ConsoleMenu
 			main.AddLink(student_listing);
 			MenuAuto teacher_listing = new MenuAuto("Liste des Professeurs",Generator.List_of_teachers);
 			main.AddLink(teacher_listing);
-			MenuAuto activities_listing = new MenuAuto("Liste des Activitées", Generator.List_of_activities);
+			MenuGen activities_listing = new MenuGen("Liste des Activitées");
+			foreach (var item in Generator.List_of_Activities_by_year)
+			{
+				activities_listing.AddLink(new MenuAuto(item.Key, Generator.List_of_Activities_by_year[item.Key]));
+			}
 			main.AddLink(activities_listing);
             main.Display();
-
 		}
 	}
 }

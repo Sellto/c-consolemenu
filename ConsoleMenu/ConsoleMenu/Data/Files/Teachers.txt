@@ -1,8 +1,11 @@
 Combefis:Sebastien:CBF:2700
-Hilleware:Ruben:HLW:2600
 Lurkin:Quentin:LUR:2300
+Hilleware:Ruben:HLW:2600
 Mathieu:Pierre:MAT:2310
 Marchand:Cedric:MAR:2456
 Flemal:Clemence:FLE:3452
 Van Den Doren:Xavier:VDD:6000
-GNG:Francis:GNG:4500
+Guening:Francis:GNG:4500
+Bertrand:Beber:btd:2500
+Verlant:John:vrt:2300
+Selleslagh:Tom:SLS:10500

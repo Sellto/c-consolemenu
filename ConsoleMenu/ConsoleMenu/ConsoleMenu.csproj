@@ -54,15 +54,18 @@
     <Compile Include="Data\Class\InterfaceData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Files\Comment.xml" />
     <Content Include="Data\Files\Year.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Files\Activities.txt" />
-    <None Include="Data\Files\Generator.txt" />
+    <None Include="Data\Files\Generator.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Data\Files\Students.txt" />
     <None Include="Data\Files\Teachers.txt" />
-    <None Include="Data\Files\Evaluations\2_01.examen_noel.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Files\Evaluations\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
