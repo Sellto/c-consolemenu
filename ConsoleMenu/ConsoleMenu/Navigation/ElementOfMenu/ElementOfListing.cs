@@ -17,7 +17,9 @@ namespace ConsoleMenu
 		{
 			item.Show();
 			Console.ReadKey();
-			//Erase
+
+			//Clear Screen Without use Console.Clear() method.
+			//Real clear,no scrollDown in console prompt
 			Console.SetCursorPosition(0, 0);
 			for (int i = 0; i < Console.WindowHeight; i++)
 			{
@@ -27,6 +29,8 @@ namespace ConsoleMenu
 				}
 			}
 			Console.SetCursorPosition(0, 0);
+
+			//back to Previous menu.
 			menu.Display();
 		}
 	}

@@ -8,6 +8,8 @@ namespace ConsoleMenu
 		{
 			this.menu = gotomenu;
 		}
+
+		//the action of this "ElementOfMenu" is to refer to another menu and display it.
 		public override void Action()
 		{
 			menu.Display();

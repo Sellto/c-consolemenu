@@ -10,11 +10,7 @@ namespace ConsoleMenu
 	{
         private string id, year;
         private Bulletin bulletin;
-
-
-
-        public Student(string last, string first, string year, string id="0") :
-            base(last, first)
+        public Student(string last, string first, string year, string id="0") :base(last, first)
         {           
             this.year = year;
             this.id = (id == "0") ? Generator.GenID() : id;
@@ -26,7 +22,6 @@ namespace ConsoleMenu
         {
             get { return id; }
         }
-
         public string Year
         {
             get { return year; }
@@ -45,15 +40,11 @@ namespace ConsoleMenu
                     Listofact.Add(activity);
                 }
             }
-
-            return Listofact;
+			return Listofact;
         }
 
 
-
 		//Needed For Navigation!
-
-
         public override string DisplayInfo()
         {
             return string.Format("{0} - {1}"+" "+"{2}", id, Lastname, Firstname);

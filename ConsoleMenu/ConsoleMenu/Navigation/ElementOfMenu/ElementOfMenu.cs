@@ -8,13 +8,17 @@ namespace ConsoleMenu
 		{
 			this.name = name;
 		}
+
+
 		public string Name
 		{
 			get {return name;}
 		}
+
+		//Action() is a function that a subclass must have.
+		//it defines what launch the selected item
 		public virtual void Action()
 		{
-			Console.WriteLine("Pas d'Action");
 		}
 
 	}

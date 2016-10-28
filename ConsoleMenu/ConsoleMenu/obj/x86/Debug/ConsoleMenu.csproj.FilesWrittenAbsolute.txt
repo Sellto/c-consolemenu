@@ -32,3 +32,6 @@
 /Users/Tom/Downloads/C-ConsoleMenu-4/ConsoleMenu/ConsoleMenu/bin/Debug/ConsoleMenu.pdb
 /Users/Tom/Downloads/C-ConsoleMenu-4/ConsoleMenu/ConsoleMenu/bin/Debug/ConsoleMenu.exe
 /Users/Tom/Downloads/C-ConsoleMenu-4/ConsoleMenu/ConsoleMenu/bin/Debug/Data/Files/Generator.txt
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/bin/Debug/Data/Files/Generator.txt
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/bin/Debug/ConsoleMenu.pdb
+/Users/Tom/Desktop/c-consolemenu/ConsoleMenu/ConsoleMenu/obj/x86/Debug/ConsoleMenu.pdb

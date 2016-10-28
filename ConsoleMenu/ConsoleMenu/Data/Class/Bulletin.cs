@@ -10,9 +10,7 @@ namespace ConsoleMenu
     {
         private string student_id, student_year;
         private List<Evaluation> evaluations;
-        private List<Activity> activities;
-
-        public Bulletin(string id, string year)
+		public Bulletin(string id, string year)
         {
             student_id = id;
             student_year = year;
@@ -78,7 +76,14 @@ namespace ConsoleMenu
             {
                 total += point;
             }
-            return (total / points.Count);
+			try
+			{
+				return (total / points.Count);
+			}
+			catch
+			{
+				return 0;
+			}
         }
 
 

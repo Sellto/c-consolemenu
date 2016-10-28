@@ -16,6 +16,10 @@ namespace ConsoleMenu
 			this.listing = listing;
 			this.menu = menu;
 		}
+
+		//The choose of the Type and how a item to be added is based
+		//on the first hidden item (called "First Item") of the list 
+		//in which it is located and which is always a subclass of DataToMenu.
 		public override void Action()
 		{
 			if (listing[0].GetType() == typeof(Student))
@@ -29,6 +33,8 @@ namespace ConsoleMenu
                 Generator.GenStudents();
                 Generator.GenStudents_by_year();
 			}
+
+
 			if (listing[0].GetType() == typeof(Teacher))
 			{
 				Console.Write("Nom : ");
@@ -45,6 +51,8 @@ namespace ConsoleMenu
                 Generator.GenTeachers();
                 Generator.GenTeacherActivity();
 			}
+
+
             if (listing[0].GetType() == typeof(Activity))
             {
                 Console.Write("Intitulé : ");
@@ -61,6 +69,7 @@ namespace ConsoleMenu
                         break;
                     }
                 }
+				//it's not possible to add a activity to a unknown professor.
                 if (tea == null)
                 {
                     Console.WriteLine("Ce Trigramme n'est associé à aucun professeur \n");
@@ -93,6 +102,7 @@ namespace ConsoleMenu
                     {
                         Console.Write(student.Id + "\t" + student.Lastname + "\t" + student.Firstname + " ..... ");
                         string note = Console.ReadLine();
+						//it's possible to put a appreciation or a numerical cotation.
                         if (appreciations.Contains(note) || note_num.Contains(note))
                         {
                             listing.Add(new Evaluation(listing[0].Activity, student, name, note));

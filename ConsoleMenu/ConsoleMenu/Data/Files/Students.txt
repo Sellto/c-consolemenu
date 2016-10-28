@@ -1,8 +1,0 @@
-go:gol:1:16165
-Gol :go:2:16171
-Le thug:Tom:3:16007
-dd:dd:3:16076
-azerty:qwerty:2:16171
-kou:ki:1:16332
-ko:ko:4:16386
-e:e:1:16401

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
+
 
 namespace ConsoleMenu
 {
+	//Post-Condition : The First Menu Created Will Be the MainMenu!
 	public class Menu
 	{
 		private static List<Menu> allofmenu = new List<Menu>();
@@ -22,6 +22,8 @@ namespace ConsoleMenu
 			get { return title; }
 		}
 
+
+		// The function Display() defined how the navigation works
 		public void Display()
 		{
 			int positiony = 0;
@@ -31,7 +33,8 @@ namespace ConsoleMenu
             {
                 if ((this.Title != allofmenu[0].Title) && (element[element.Count - 1].Name != allofmenu[0].Title))
                 {
-                    element.Add(new ElementOfMenu(allofmenu[0].Title));
+                    //Add a link to First Menu created in last position to the screen.
+					element.Add(new ElementOfMenu(allofmenu[0].Title));
                 }
             }
             catch
@@ -45,6 +48,7 @@ namespace ConsoleMenu
 				{
 					if (i == positiony)
 					{
+						//Color of Selected Item
 						Console.BackgroundColor = ConsoleColor.White;
 						Console.ForegroundColor = ConsoleColor.Black;
 					}
@@ -69,6 +73,8 @@ namespace ConsoleMenu
 				if (k.Key == ConsoleKey.Enter)
 				{
 					selection = true;
+					//Clear Screen Without use Console.Clear() method.
+					//Real clear,no scrollDown in console prompt
 					Console.SetCursorPosition(0, 0);
 					for (int i = 0; i < Console.WindowHeight; i++)
 					{
@@ -83,10 +89,12 @@ namespace ConsoleMenu
 			{
 				if (allofmenu[0].Title == element[positiony].Name)
 				{
+					//Back to First Menu Created
 					allofmenu[0].Display();
 				}
 				else
 				{
+					//Launch the action of the selected item
 					element[positiony].Action();
 				}
 
