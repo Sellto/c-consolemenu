@@ -1,6 +1,2 @@
-﻿Informatique 2BA:CBF:4:2_1
-Informatique 3BA:LUR:4:3_1
-Electronique 2BA:GNG:4:2_2
-Electricité 1BA:VRT:4:1_1
-Informatique 1MA:CBF:4:4_1
-Mathématique 1MA:HLW:4:4_2
+Technologie Informatique:MAR:5:1_1
+Electricité Fondamentale:VRT:4:1_2

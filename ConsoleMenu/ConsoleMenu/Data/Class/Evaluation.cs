@@ -119,7 +119,8 @@ namespace ConsoleMenu
             {
                 if (eval.Title == this.Title)
                 {
-                    Console.WriteLine(eval.student.Id + " : " + eval.GetNote());
+
+					Console.WriteLine(eval.student.Id + " : " + eval.GetNote());
                 }
             }
 		}
