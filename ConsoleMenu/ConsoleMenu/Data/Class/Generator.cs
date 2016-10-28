@@ -294,18 +294,19 @@ namespace ConsoleMenu
 
         public static void ModificationOfGeneratorFileByID(string id,string newentry)
         {
-            string[] file = System.IO.File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, path + "Generator.txt"));
-			//File.WriteAllText(path, String.Empty);
+            var pathfile = Path.Combine(Environment.CurrentDirectory, path + "Generator.txt");
+            string[] file = System.IO.File.ReadAllLines(pathfile);
+			File.WriteAllText(pathfile, String.Empty);
             foreach (string line in file)
             {
                 string[] parameters = line.Split(':');
                 if (parameters[0] == id)
                 {
-                    File.AppendAllText(path, parameters[0] + ":" + newentry+"\n");
+                    File.AppendAllText(pathfile, parameters[0] + ":" + newentry+"\n");
                 }
                 else
                 {
-                    File.AppendAllText(path, line+"\n");
+                    File.AppendAllText(pathfile, line+"\n");
                 }
 
             }
