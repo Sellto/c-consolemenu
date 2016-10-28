@@ -43,16 +43,19 @@ namespace ConsoleMenu
         {
             return string.Format("Nom: {0}\tPrenom: {1}", lastname, firstname);
         }
+
+
+
+		//Needed For Navigation!
+		//function needed when a item of a class can be display into a menu
 		public override string DisplayInfo()
 		{
-			return this.DisplayName();
+			return base.DisplayInfo();
 		}
 
 		public override void Show()
 		{
-			Console.WriteLine(" --- " + lastname + " " + firstname + " --- \n");
+			base.Show();
 		}
-
-
 	}
 }

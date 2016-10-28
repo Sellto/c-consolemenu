@@ -54,6 +54,7 @@ namespace ConsoleMenu
 
 
 		//Needed For Navigation!
+		//function needed when a item of a class can be display into a menu
 		public override void Show()
 		{
             Console.WriteLine("--- Informations Générales ---");

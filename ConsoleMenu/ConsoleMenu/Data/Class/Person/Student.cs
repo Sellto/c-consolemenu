@@ -45,6 +45,7 @@ namespace ConsoleMenu
 
 
 		//Needed For Navigation!
+		//function needed when a item of a class can be display into a menu
         public override string DisplayInfo()
         {
             return string.Format("{0} - {1}"+" "+"{2}", id, Lastname, Firstname);
