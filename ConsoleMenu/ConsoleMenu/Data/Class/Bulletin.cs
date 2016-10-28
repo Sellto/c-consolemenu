@@ -23,7 +23,7 @@ namespace ConsoleMenu
         }
 
 
-        public void SearchEvaluations()
+        private void SearchEvaluations()
         {   
             foreach(Evaluation eval in Generator.List_of_evaluations)
             {
@@ -35,7 +35,7 @@ namespace ConsoleMenu
         }
 
 
-        public List<string> SearchActivities()
+        private List<string> SearchActivities()
         {
             List<string> act_name = new List<string>();
             foreach(Activity act in Generator.List_of_activities)
@@ -66,7 +66,7 @@ namespace ConsoleMenu
                 }
             }
 			evaluations = new List<Evaluation>();
-            //Console.WriteLine("\nMoyenne:\t" + Average() + "/20");
+          
         }
 
         //Comme Average est appelée uniquement dans Displaybulletin -> la liste des evalutions est déja composée

@@ -61,22 +61,12 @@ namespace ConsoleMenu
 		}
 
 
-		public List<Evaluation> GenListofEvaluations()
-		{
-			List<Evaluation> list_of_evaluations = new List<Evaluation>();
-			return list_of_evaluations;
-		}
-
-
 		//Needed For Navigation!
 		//function needed when a item of a class can be display into a menu
 		public override string DisplayInfo()
 		{
 			return  this.Code + " - " + this.Name;
 		}
-
-
-
 
 
 		public override void Show()

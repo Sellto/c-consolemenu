@@ -16,7 +16,6 @@ namespace ConsoleMenu
         {
             trigram = tri;
             salary = sal;
-            //GenListofActivities();
         }
 
 
@@ -32,25 +31,6 @@ namespace ConsoleMenu
             get { return salary; }
             set { salary = value; }
         }
-
-
-
-        //functions
-        public bool CheckTrigram(string tri)
-        {
-            bool valid = true;
-            foreach(Teacher teacher in Generator.List_of_teachers)
-            {
-                if(teacher.Trigram == tri)
-                {
-                    valid = false;
-                    break;
-                }
-            }
-            return valid;
-        }
-
-
 
 
 		//Needed For Navigation!

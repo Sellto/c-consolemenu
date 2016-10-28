@@ -28,21 +28,6 @@ namespace ConsoleMenu
         }
 
 
-        //Functions
-
-        public List<Activity> SearchActivities()
-        {
-            List<Activity>  Listofact = new List<Activity>();
-            foreach (Activity activity in Generator.List_of_activities)
-            {
-                if (activity.Code.Split('_')[0] == year)
-                {
-                    Listofact.Add(activity);
-                }
-            }
-			return Listofact;
-        }
-
 
 		//Needed For Navigation!
 		//function needed when a item of a class can be display into a menu
