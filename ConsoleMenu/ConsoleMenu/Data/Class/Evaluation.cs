@@ -104,6 +104,9 @@ namespace ConsoleMenu
             Console.WriteLine("\n" + activity.Name + "\n\n\t" + title + ":\t" + student.Id + "\t" + GetNote() );
         }
 
+
+		//Needed For Navigation!
+		//function needed when a item of a class can be display into a menu
 		public override string DisplayInfo()
 		{
             return this.Title;
